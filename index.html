@@ -87,8 +87,8 @@
     padding:28px 20px; box-shadow:var(--shadow); text-align:center;
   }
   .cd-label{font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; font-style:italic}
-  .cd-nums{display:flex; gap:18px; justify-content:center}
-  .cd-num{text-align:center; min-width:74px}
+  .cd-nums{display:flex; gap:clamp(8px,3vw,18px); justify-content:center; flex-wrap:wrap; max-width:100%}
+  .cd-num{text-align:center; min-width:clamp(54px,15vw,74px)}
   .cd-num b{display:block; font-family:'Fraunces',serif; font-weight:900; font-size:clamp(2rem,5vw,3rem); line-height:1; color:var(--red)}
   .cd-num span{font-size:.78rem; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-soft); font-weight:600}
 
