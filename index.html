@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>El Encuentro 2026 · Madrid, 26 de octubre — La comunidad Solana de España</title>
+<meta name="description" content="El Encuentro 2026 reúne a la comunidad Solana de España en Madrid el lunes 26 de octubre. Charlas, paneles y networking. Entrada gratuita con reserva.">
+<meta property="og:title" content="El Encuentro 2026 · Madrid, 26 de octubre">
+<meta property="og:description" content="Un día. Una sala. Toda la familia. La comunidad Solana de España vuelve a Madrid — entrada gratuita con reserva.">
+<meta property="og:type" content="article">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;0,9..144,900;1,9..144,600;1,9..144,900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F8F2E6; --paper2:#F1E6D0; --ink:#211812; --ink-soft:#4a3f35;
+    --red:#C8351F; --red-dark:#9E2715; --mustard:#E9A63C; --blue:#2E5E8C; --green:#3F6B54;
+    --border:2px solid var(--ink);
+    --shadow:6px 6px 0 var(--ink);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper); color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif; font-size:17px; line-height:1.65;
+    overflow-x:hidden;
+  }
+  ::selection{background:var(--mustard); color:var(--ink)}
+  a{color:var(--red); text-decoration-thickness:2px; text-underline-offset:3px}
+  a:hover{color:var(--red-dark)}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px}
+
+  /* ---------- HERO ---------- */
+  .hero{position:relative; padding:72px 0 56px; overflow:hidden}
+  .sun{
+    position:absolute; top:-140px; right:-160px; width:520px; height:520px; border-radius:50%;
+    background:
+      repeating-conic-gradient(from 0deg, var(--mustard) 0deg 6deg, transparent 6deg 12deg);
+    opacity:.35; animation:spin 90s linear infinite; z-index:0;
+  }
+  .sun::after{
+    content:""; position:absolute; inset:34%; border-radius:50%;
+    background:var(--red); opacity:.9;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .eyebrow{
+    position:relative; z-index:1;
+    font-weight:700; letter-spacing:.22em; text-transform:uppercase; font-size:.8rem;
+    color:var(--red); margin-bottom:18px;
+  }
+  .eyebrow span{background:var(--ink); color:var(--paper); padding:3px 10px; border-radius:99px}
+  h1{
+    position:relative; z-index:1;
+    font-family:'Fraunces',serif; font-weight:900; line-height:.92;
+    font-size:clamp(3.4rem, 11vw, 8.2rem); letter-spacing:-.02em;
+  }
+  h1 .enc{position:relative; display:inline-block; font-style:italic; color:var(--red)}
+  h1 .enc svg{position:absolute; left:-2%; bottom:-.06em; width:104%; height:.22em}
+  h1 .year{font-weight:400; color:var(--ink-soft)}
+  .lede{
+    position:relative; z-index:1; max-width:640px; margin-top:26px;
+    font-size:clamp(1.1rem, 2.2vw, 1.35rem); color:var(--ink-soft);
+  }
+  .lede strong{color:var(--ink)}
+  .meta{position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:10px; margin:28px 0 34px}
+  .chip{
+    border:var(--border); border-radius:99px; padding:8px 16px; font-weight:600; font-size:.92rem;
+    background:var(--paper); box-shadow:3px 3px 0 var(--ink);
+  }
+  .chip.hot{background:var(--red); color:var(--paper)}
+  .cta-row{position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:16px; align-items:center}
+  .btn{
+    display:inline-block; background:var(--red); color:var(--paper); font-weight:700; font-size:1.05rem;
+    padding:16px 30px; border:var(--border); border-radius:14px; box-shadow:var(--shadow);
+    text-decoration:none; transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn:hover{transform:translate(-3px,-3px); box-shadow:9px 9px 0 var(--ink); color:var(--paper); background:var(--red-dark)}
+  .btn.ghost{background:var(--paper); color:var(--ink)}
+  .btn.ghost:hover{background:var(--paper2); color:var(--ink)}
+  .tiny{font-size:.88rem; color:var(--ink-soft); margin-top:18px; position:relative; z-index:1}
+
+  /* ---------- COUNTDOWN ---------- */
+  .countdown{margin:8px 0 0}
+  .cd-box{
+    border:var(--border); border-radius:18px; background:var(--paper2);
+    display:flex; flex-wrap:wrap; gap:26px; align-items:center; justify-content:center;
+    padding:26px 20px; box-shadow:var(--shadow);
+  }
+  .cd-label{font-family:'Fraunces',serif; font-weight:600; font-size:1.15rem; font-style:italic}
+  .cd-nums{display:flex; gap:18px}
+  .cd-num{text-align:center; min-width:74px}
+  .cd-num b{display:block; font-family:'Fraunces',serif; font-weight:900; font-size:clamp(2rem,5vw,3rem); line-height:1; color:var(--red)}
+  .cd-num span{font-size:.78rem; text-transform:uppercase; letter-spacing:.14em; color:var(--ink-soft); font-weight:600}
+
+  /* ---------- SECTIONS ---------- */
+  section{padding:74px 0}
+  .kicker{font-weight:700; letter-spacing:.2em; text-transform:uppercase; font-size:.78rem; color:var(--blue); margin-bottom:12px}
+  h2{font-family:'Fraunces',serif; font-weight:800; font-size:clamp(1.9rem,4.4vw,3rem); line-height:1.05; letter-spacing:-.01em; margin-bottom:22px}
+  h2 em{font-style:italic; color:var(--red)}
+  .prose{max-width:720px; color:var(--ink-soft); font-size:1.08rem}
+  .prose p+p{margin-top:16px}
+  .prose strong{color:var(--ink)}
+
+  /* reasons */
+  .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:40px}
+  .card{
+    border:var(--border); border-radius:16px; background:var(--paper); padding:26px 22px 24px;
+    box-shadow:var(--shadow); transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .card:hover{transform:translate(-3px,-3px); box-shadow:9px 9px 0 var(--ink)}
+  .card .num{font-family:'Fraunces',serif; font-weight:900; font-size:1rem; color:var(--paper); background:var(--ink); border-radius:99px; padding:3px 12px; display:inline-block; margin-bottom:14px}
+  .card h3{font-family:'Fraunces',serif; font-weight:800; font-size:1.3rem; margin-bottom:10px}
+  .card p{color:var(--ink-soft); font-size:.98rem}
+  .card:nth-child(2) .num{background:var(--red)}
+  .card:nth-child(3) .num{background:var(--blue)}
+  .card:nth-child(4) .num{background:var(--green)}
+
+  /* timeline */
+  .timeline{margin-top:44px; border-left:3px dashed var(--red); padding-left:34px; max-width:640px}
+  .t-item{position:relative; padding-bottom:34px}
+  .t-item:last-child{padding-bottom:0}
+  .t-item::before{
+    content:""; position:absolute; left:-43px; top:6px; width:16px; height:16px; border-radius:50%;
+    background:var(--paper); border:3px solid var(--red);
+  }
+  .t-time{font-family:'Fraunces',serif; font-weight:900; color:var(--red); font-size:1.05rem; letter-spacing:.02em}
+  .t-item h3{font-size:1.12rem; font-weight:700; margin:2px 0 4px}
+  .t-item p{color:var(--ink-soft); font-size:.97rem}
+
+  /* para quién */
+  .who{display:flex; flex-wrap:wrap; gap:14px; margin-top:34px}
+  .who .chip{box-shadow:4px 4px 0 var(--ink); font-size:1rem; padding:10px 20px}
+  .who .chip:nth-child(2){background:var(--mustard)}
+  .who .chip:nth-child(4){background:var(--blue); color:var(--paper)}
+  .who .chip:nth-child(5){background:var(--green); color:var(--paper)}
+
+  /* marquee */
+  .marquee{border-top:var(--border); border-bottom:var(--border); background:var(--ink); color:var(--paper); padding:18px 0; overflow:hidden}
+  .marquee .track{display:flex; gap:46px; white-space:nowrap; animation:scroll 30s linear infinite; width:max-content}
+  .marquee:hover .track{animation-play-state:paused}
+  .marquee span{font-family:'Fraunces',serif; font-weight:600; font-style:italic; font-size:1.25rem}
+  .marquee span::after{content:"✦"; color:var(--mustard); margin-left:46px; font-style:normal}
+  @keyframes scroll{to{transform:translateX(-50%)}}
+
+  /* illustration + share */
+  .duo{display:grid; grid-template-columns:1.05fr .95fr; gap:44px; align-items:center; margin-top:10px}
+  @media(max-width:820px){.duo{grid-template-columns:1fr}}
+  .poster{
+    border:var(--border); border-radius:18px; overflow:hidden; box-shadow:var(--shadow); background:var(--paper2);
+  }
+  .poster svg{display:block; width:100%; height:auto}
+  .share p{color:var(--ink-soft); margin:18px 0 24px}
+  .share .cta-row{gap:12px}
+
+  /* faq */
+  details{border:var(--border); border-radius:14px; background:var(--paper); padding:18px 22px; margin-bottom:14px; box-shadow:4px 4px 0 var(--ink)}
+  details[open]{background:var(--paper2)}
+  summary{font-weight:700; cursor:pointer; font-size:1.05rem; list-style:none; display:flex; justify-content:space-between; align-items:center; gap:14px}
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:"+"; font-family:'Fraunces',serif; font-weight:900; font-size:1.5rem; color:var(--red); transition:transform .2s ease}
+  details[open] summary::after{transform:rotate(45deg)}
+  details p{margin-top:12px; color:var(--ink-soft)}
+
+  /* final */
+  .final{
+    background:var(--ink); color:var(--paper); border-radius:24px; padding:64px 40px; text-align:center;
+    position:relative; overflow:hidden;
+  }
+  .final h2{color:var(--paper)}
+  .final h2 em{color:var(--mustard)}
+  .final .lede{color:#cfc4b4; margin:18px auto 34px}
+  .final .tiny{color:#cfc4b4}
+  .final .sun{top:auto; bottom:-260px; right:-140px; opacity:.22}
+  .final .btn.ghost{background:var(--mustard); border-color:var(--paper); box-shadow:6px 6px 0 rgba(248,242,230,.28)}
+
+  footer{padding:44px 0 60px; color:var(--ink-soft); font-size:.92rem}
+  footer .links{display:flex; flex-wrap:wrap; gap:18px; margin:10px 0 14px}
+  footer a{font-weight:600}
+
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease}
+  .reveal.in{opacity:1; transform:none}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none}
+    .sun,.marquee .track{animation:none}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="sun" aria-hidden="true"></div>
+    <p class="eyebrow"><span>La Familia presenta</span></p>
+    <h1>EL<br><span class="enc">ENCUENTRO<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 14 C 60 4, 120 18, 180 8 S 270 12, 296 7" fill="none" stroke="#C8351F" stroke-width="7" stroke-linecap="round"/></svg></span><br><span class="year">2026</span></h1>
+    <p class="lede">El evento Solana del año en España vuelve a Madrid. <strong>Un día. Una sala. Toda la familia.</strong> Charlas, paneles y el networking que de verdad importa.</p>
+    <div class="meta">
+      <span class="chip hot">Lunes 26 de octubre</span>
+      <span class="chip">10:00 – 22:00</span>
+      <span class="chip">Malasaña · Madrid</span>
+      <span class="chip">Entrada gratis con reserva</span>
+    </div>
+    <div class="cta-row">
+      <a class="btn" href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">Reserva tu plaza gratis →</a>
+      <a class="btn ghost" href="#que-es">Descubre el evento</a>
+    </div>
+    <p class="tiny">Plazas limitadas · La dirección exacta te llega al reservar · Un evento de <a href="https://x.com/LaFamilia_so" target="_blank" rel="noopener">@LaFamilia_so</a></p>
+  </div>
+</header>
+
+<div class="wrap countdown reveal">
+  <div class="cd-box">
+    <span class="cd-label">Faltan</span>
+    <div class="cd-nums" id="cd">
+      <div class="cd-num"><b id="cd-d">–</b><span>días</span></div>
+      <div class="cd-num"><b id="cd-h">–</b><span>horas</span></div>
+      <div class="cd-num"><b id="cd-m">–</b><span>min</span></div>
+      <div class="cd-num"><b id="cd-s">–</b><span>seg</span></div>
+    </div>
+    <span class="cd-label">para El Encuentro</span>
+  </div>
+</div>
+
+<section id="que-es">
+  <div class="wrap reveal">
+    <p class="kicker">El evento</p>
+    <h2>La comunidad Solana de España, <em>en una sola sala</em>.</h2>
+    <div class="prose">
+      <p><strong>El Encuentro</strong> es el punto de reunión de La Familia, la comunidad Solana en España. Un día al año, builders, founders, developers, proyectos y comunidades dejan los chats a un lado y se sientan en el mismo espacio para celebrar lo que están construyendo juntos.</p>
+      <p>Sin feria, sin stands y sin ruido: <strong>personas, tiempo y conversaciones</strong>. La última edición llenó el aforo en Madrid y esta vuelve con más sala, más charlas y más familia. Si construyes, lideras un proyecto o quieres estar cerca del ecosistema, este es el día señalado en el calendario.</p>
+      <p>Y lo mejor: <strong>la entrada es gratuita</strong>. Solo hay que reservar la plaza — vuelan.</p>
+    </div>
+    <div class="cta-row" style="margin-top:30px">
+      <a class="btn" href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">Quiero mi plaza →</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">Por qué no te lo puedes perder</p>
+    <h2>Cuatro razones para <em>venir a Madrid</em>.</h2>
+    <div class="grid">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>Una sala, toda la comunidad</h3>
+        <p>De Madrid a Barcelona, de Bilbao a Sevilla. Un solo día para poner cara a los nombres del timeline y conocer a quien está construyendo a tu lado.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Charlas y paneles sin humo</h3>
+        <p>Miembros de la comunidad cuentan qué están construyendo sobre Solana desde España y qué han aprendido por el camino. Conversaciones reales, cero marketing vacío.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>Networking de verdad</h3>
+        <p>El verdadero motivo por el que se viene: tiempo de sobra para hablar con quien tienes al lado, sin prisa y sin agenda cerrada.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Madrid como escenario</h3>
+        <p>Malasaña, un lunes de octubre, con la cultura y la ciudad de fondo. Gratis, solo hay que reservar. Así se celebra la comunidad.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--paper2); border-top:var(--border); border-bottom:var(--border)">
+  <div class="wrap reveal">
+    <p class="kicker">El día</p>
+    <h2>Cómo se vive <em>El Encuentro</em>.</h2>
+    <div class="timeline">
+      <div class="t-item">
+        <span class="t-time">10:00</span>
+        <h3>Apertura y primer café</h3>
+        <p>Reencuentros, acreditaciones y esas conversaciones que empiezan en la cola del café.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-time">Mañana</span>
+        <h3>Charlas de la comunidad</h3>
+        <p>Quien construye sobre Solana en España cuenta qué hace y qué ha aprendido. Directo, cercano y sin PowerPoint infinito.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-time">Mediodía</span>
+        <h3>Paneles sin guion</h3>
+        <p>Conversaciones honestas sobre lo que de verdad está pasando en el ecosistema desde España y el mundo hispanohablante.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-time">Tarde</span>
+        <h3>Talleres, activaciones y networking</h3>
+        <p>El corazón del día: conocer proyectos, descubrir iniciativas y conectar con otros builders.</p>
+      </div>
+      <div class="t-item">
+        <span class="t-time">22:00</span>
+        <h3>Cierre</h3>
+        <p>Se apagan las luces con la sensación de haber estado exactamente donde había que estar.</p>
+      </div>
+    </div>
+    <p class="prose" style="margin-top:26px; font-size:.98rem">El programa completo se publica en Luma: <a href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">reserva tu plaza</a> y te avisan de todo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">Para quién</p>
+    <h2>Si estás en el ecosistema —o quieres estarlo—, <em>es tu día</em>.</h2>
+    <div class="who">
+      <span class="chip">Builders</span>
+      <span class="chip">Founders</span>
+      <span class="chip">Proyectos</span>
+      <span class="chip">Devs</span>
+      <span class="chip">Comunidades y sponsors</span>
+      <span class="chip">Recién llegados</span>
+    </div>
+    <p class="prose" style="margin-top:26px">Da igual si despliegas todos los días o si es tu primera vez: El Encuentro está pensado para que todo el mundo salga con una conversación más y una puerta abierta.</p>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Madrid</span><span>Barcelona</span><span>Valencia</span><span>Sevilla</span><span>Zaragoza</span><span>Bilbao</span><span>Málaga</span><span>A Coruña</span><span>Murcia</span><span>Palma</span><span>Alicante</span><span>Valladolid</span><span>y tu pueblo también</span>
+    <span>Madrid</span><span>Barcelona</span><span>Valencia</span><span>Sevilla</span><span>Zaragoza</span><span>Bilbao</span><span>Málaga</span><span>A Coruña</span><span>Murcia</span><span>Palma</span><span>Alicante</span><span>Valladolid</span><span>y tu pueblo también</span>
+  </div>
+</div>
+
+<section>
+  <div class="wrap reveal">
+    <div class="duo">
+      <div class="poster" aria-label="Ilustración original de El Encuentro 2026: un sol sobre Madrid con la fecha 26·10·2026">
+        <svg viewBox="0 0 600 600" role="img" aria-label="Cartel ilustrado original de El Encuentro 2026">
+          <rect width="600" height="600" fill="#F1E6D0"/>
+          <circle cx="300" cy="238" r="118" fill="#E9A63C"/>
+          <g stroke="#211812" stroke-width="6" stroke-linecap="round">
+            <line x1="300" y1="70" x2="300" y2="106"/>
+            <line x1="185" y1="130" x2="210" y2="158"/>
+            <line x1="415" y1="130" x2="390" y2="158"/>
+            <line x1="150" y1="238" x2="186" y2="238"/>
+            <line x1="414" y1="238" x2="450" y2="238"/>
+          </g>
+          <path d="M160 600 L160 380 A140 140 0 0 1 440 380 L440 600 Z" fill="#C8351F"/>
+          <path d="M240 600 L240 452 A60 60 0 0 1 360 452 L360 600 Z" fill="#F8F2E6" stroke="#211812" stroke-width="6"/>
+          <g fill="#F8F2E6">
+            <rect x="205" y="420" width="26" height="34" rx="13"/>
+            <rect x="369" y="420" width="26" height="34" rx="13"/>
+          </g>
+          <rect x="0" y="532" width="600" height="68" fill="#211812"/>
+          <text x="300" y="577" text-anchor="middle" font-family="Fraunces, serif" font-weight="900" font-size="38" fill="#F8F2E6" letter-spacing="2">26 · 10 · 2026</text>
+          <text x="300" y="70" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="600" font-size="30" fill="#211812">EL ENCUENTRO</text>
+          <text x="300" y="106" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="17" fill="#4a3f35" letter-spacing="6">MADRID</text>
+        </svg>
+      </div>
+      <div class="share">
+        <p class="kicker">Diseño original · Corre la voz</p>
+        <h2>Comparte y <em>trae a la familia</em>.</h2>
+        <p>Este cartel es nuestro pequeño homenaje: un sol sobre Madrid y una puerta abierta. Compártelo con quien tiene que venir, mándalo por WhatsApp o publícalo — cuanta más familia, mejor Encuentro.</p>
+        <div class="cta-row">
+          <a class="btn" href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">Reservar plaza →</a>
+          <a class="btn ghost" href="https://wa.me/?text=Nos%20vemos%20en%20El%20Encuentro%202026%2C%20el%20evento%20Solana%20del%20a%C3%B1o%20en%20Espa%C3%B1a.%20Madrid%2C%2026%20de%20octubre%2C%20entrada%20gratis.%20Reserva%3A%20https%3A%2F%2Flafamilia.so%2Fir%2Fencuentro-st" target="_blank" rel="noopener">Compartir por WhatsApp</a>
+          <a class="btn ghost" href="https://lafamilia.so/el-encuentro/cartel.jpg" target="_blank" rel="noopener">Cartel del evento</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <p class="kicker">Preguntas rápidas</p>
+    <h2>Lo que todo el mundo <em>pregunta</em>.</h2>
+    <details>
+      <summary>¿Cuánto cuesta asistir?</summary>
+      <p>Nada. La entrada es <strong>gratuita</strong>, pero hay que reservar plaza porque el aforo es limitado. Se hace en un minuto en Luma.</p>
+    </details>
+    <details>
+      <summary>¿Dónde es exactamente?</summary>
+      <p>En <strong>Malasaña, Madrid</strong>. La dirección exacta se comparte al confirmar la reserva, y el día del evento hay señalización.</p>
+    </details>
+    <details>
+      <summary>¿Tengo que ser desarrollador para ir?</summary>
+      <p>No. El Encuentro reúne a builders, founders, proyectos, comunidades, sponsors y a quien simplemente quiere conocer el ecosistema. Hay sitio para todos.</p>
+    </details>
+    <details>
+      <summary>¿Quién organiza el evento?</summary>
+      <p><strong>La Familia</strong> (<a href="https://x.com/LaFamilia_so" target="_blank" rel="noopener">@LaFamilia_so</a>), la comunidad Solana en España. Un proyecto comunitario hecho por y para la comunidad.</p>
+    </details>
+    <details>
+      <summary>¿Cómo reservo mi plaza?</summary>
+      <p>Con un clic: <a href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">lafamilia.so/ir/encuentro-st</a>. Te confirmarán la plaza y recibirás toda la info del día.</p>
+    </details>
+  </div>
+</section>
+
+<section>
+  <div class="wrap reveal">
+    <div class="final">
+      <div class="sun" aria-hidden="true"></div>
+      <h2>Nos vemos en <em>Madrid</em>.</h2>
+      <p class="lede">Lunes 26 de octubre · 10:00 – 22:00 · Malasaña, Madrid.<br>Un día. Una sala. Toda la familia.</p>
+      <div class="cta-row" style="justify-content:center">
+        <a class="btn" href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">Reserva tu plaza gratis →</a>
+      </div>
+      <p class="tiny">Entrada gratuita con confirmación · Plazas limitadas · <a href="https://x.com/LaFamilia_so" target="_blank" rel="noopener" style="color:#E9A63C">@LaFamilia_so</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p><strong>El Encuentro 2026</strong> — Madrid, 26 de octubre. Contenido original creado para la comunidad, publicado en octubre de 2026.</p>
+    <div class="links">
+      <a href="https://lafamilia.so/ir/encuentro-st" target="_blank" rel="noopener">Reserva tu plaza</a>
+      <a href="https://lafamilia.so/" target="_blank" rel="noopener">La Familia</a>
+      <a href="https://x.com/LaFamilia_so" target="_blank" rel="noopener">@LaFamilia_so en X</a>
+      <a href="https://www.instagram.com/lafamilia.so/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+    <p style="font-size:.85rem">La Familia es un proyecto comunitario. Este contenido no ofrece servicios financieros ni asesoramiento de inversión.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // Countdown to 26 Oct 2026, 10:00 Europe/Madrid (CET, UTC+1)
+  var target = new Date('2026-10-26T09:00:00Z');
+  var d = document.getElementById('cd-d'), h = document.getElementById('cd-h'),
+      m = document.getElementById('cd-m'), s = document.getElementById('cd-s');
+  function pad(n){ return String(n).padStart(2,'0'); }
+  function tick(){
+    var diff = target - new Date();
+    if (diff <= 0){ d.textContent = h.textContent = m.textContent = s.textContent = '00'; return; }
+    var sec = Math.floor(diff/1000);
+    d.textContent = Math.floor(sec/86400);
+    h.textContent = pad(Math.floor(sec%86400/3600));
+    m.textContent = pad(Math.floor(sec%3600/60));
+    s.textContent = pad(sec%60);
+  }
+  tick(); setInterval(tick, 1000);
+
+  // Reveal on scroll
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: .12 });
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+})();
+</script>
+</body>
+</html>
